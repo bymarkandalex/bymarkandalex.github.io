@@ -6,9 +6,12 @@
   --sky: #5DA9E9;
 }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#container {
+  margin: 0 auto;
+  font-family: "Shantell Sans", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "BNCE" 0, "INFM" 0, "SPAC" 0;
   background-color: var(--cream);
   color: var(--navy);
   display: flex;
@@ -19,77 +22,59 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
+  max-width: 1000px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  right: 25%;
-  bottom: 25%;
-  background: url('../images/logo.png') center center / contain no-repeat;
-  opacity: 0.05;
-  z-index: 0;
+#logo {
+  height: 50%;
+  transition: filter 0.4s ease-in-out;
 }
 
-@media (max-width: 600px) {
-  body::before {
-    top: 0%;
-    left: 0%;
-    right: 0%;
-    bottom: 0%;
-  }
-}
-
-h1, p, .social-links {
-  position: relative;
-  z-index: 1;
-}
-
-h1 {
-  font-family: "Shantell Sans", cursive;
-  font-optical-sizing: auto;
-  font-weight:600;
-  font-style: normal;
-  font-variation-settings:
-	"BNCE" 0,
-	"INFM" 0,
-	"SPAC" 0;
-  font-size: 3rem;
-  margin: 0.5rem;
-  color: var(--navy);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-p {
-  margin: 1rem;
-  font-size: 1.2rem;
-  color: var(--orange);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+#logo:hover {
+  filter: drop-shadow(10px 10px 10px var(--sky));
 }
 
 .social-links {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 15px;
 }
 
 .social-links a {
+  width: 100px;
+  height: 100px;
   text-decoration: none;
   color: var(--navy);
   font-size: 1.1rem;
   border: 2px solid var(--sky);
+  border-radius: 15px;
   background-color: white;
   padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 300ms;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
-.social-links a:hover {
+.social-links a:hover, .social-links a:focus {
   background: var(--coral);
   color: white;
   border-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 10px;
+}
+
+.social-links span {
+  display: block;
+  margin: 10px;
 }
