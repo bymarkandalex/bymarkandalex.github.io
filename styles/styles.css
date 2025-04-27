@@ -28,7 +28,7 @@ body::before {
   left: 25%;
   right: 25%;
   bottom: 25%;
-  background: url('logo.png') center center / contain no-repeat;
+  background: url('../images/logo.png') center center / contain no-repeat;
   opacity: 0.05;
   z-index: 0;
 }
